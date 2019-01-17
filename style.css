@@ -1,0 +1,30 @@
+body {
+	padding: 0 30px 20px;
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+	color: #333;
+}
+
+h1 {
+	padding-left: 10px;
+}
+
+section {
+	padding: 10px 10px 20px;	
+	border-bottom: 1px solid #d3d3d3;
+}
+
+[contenteditable] {
+	border-bottom: 2px solid blue;
+	padding: 0 5px;
+	cursor: pointer;
+}
+
+[contenteditable]:focus {
+	cursor: text;
+}
+
+.total {
+	font-weight: bold;
+	color: black;
+}

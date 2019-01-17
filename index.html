@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Сколько перевести Николаю</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+	<body>
+		<h1>Сколько я должен за обед в О'Хулиганс</h1>
+		<section class="food">
+			Моя еда стоила
+			<span id="food" contenteditable="true">400</span>₽, со скидкой в
+			<span id="food__discount" contenteditable="true">30</span>% это получается
+			<span id="food__total" class="total">280</span>₽.
+		</section>
+		<section class="drink">
+			Я выпил на
+			<span id="drink" contenteditable="true">200</span>₽, 
+			а со скидкой в <span id="drink__discount" contenteditable="true">10</span>%
+			это уже <span class="total" id="drink__total">180</span>₽.
+		</section>
+		<section class="tips">
+			Нас было <span id="people" contenteditable="true">4</span>, и мы оставили
+			<span id="tips" contenteditable="true">200</span>₽ чаевых. Выходит, по <span id="tips__total" class="total">50</span>₽ с каждого.
+		</section>
+		<section>
+			Итого, я должен <span class="total" id="total">510</span>₽.
+		</section>
+		<script src="./script.js"></script>
+	</body>
+</html>
