@@ -1,0 +1,2 @@
+# ohooligans
+ohooligans calculator
