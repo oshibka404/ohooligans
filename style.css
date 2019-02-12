@@ -28,3 +28,9 @@ section {
 	font-weight: bold;
 	color: black;
 }
+
+.github-fork-ribbon.right-bottom:before {
+/* CSS-only GitHub ribbon:
+ * https://github.com/simonwhitaker/github-fork-ribbon-css */
+	background-color: #090;
+}
