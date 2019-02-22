@@ -12,6 +12,13 @@
 			<span id="food" contenteditable="true">400</span>₽, со скидкой в
 			<span id="food__discount" contenteditable="true">30</span>% это получается
 			<span id="food__total" class="total">280</span>₽.
+			<div id="soup" class="disabled">
+				<label>
+					<input type="checkbox" id="food__soup" name="food__soup" value="130" />
+					Плюс суп дня
+				</label>
+				<span class="only-when-enabled"> за <span id="food__soup-price" contenteditable="true">130</span>₽. К сожалению, без скидки. Вместе с ним <span id="food__with-soup-total" class="total">280</span>₽.</span>
+			</div>
 		</section>
 		<section class="drink">
 			Я выпил на
