@@ -3,6 +3,10 @@
 	const foodDiscountEl = document.getElementById('food__discount');
 	const foodTotalEl = document.getElementById('food__total');
 
+	const foodSoupEl = document.getElementById('food__soup');
+	const foodSoupPriceEl = document.getElementById('food__soup-price');
+	const foodWithSoupTotalEl = document.getElementById('food__with-soup-total');
+
 	const drinkEl = document.getElementById('drink');
 	const drinkDiscountEl = document.getElementById('drink__discount');
 	const drinkTotalEl = document.getElementById('drink__total');
@@ -37,13 +41,28 @@
 		return foodTotal;
 	}
 
+	const calculateSoup = () => foodSoupEl.checked ? parseInt(foodSoupPriceEl.innerText || 0, 10) : 0;
+
+	const calculateFoodWithSoup = () => {
+		const total = calculateSoup() + calculateFood();
+		foodWithSoupTotalEl.innerText = String(total);
+		return total;
+	}
+
 	const calculateTotal = () => {
-		const total = calculateFood() + calculateDrink() + calculateTips();
+		const total = calculateFoodWithSoup() + calculateDrink() + calculateTips();
 		totalEl.innerText = isNaN(total) ? 'undefinedundefinedNaN[]{}' : Math.ceil(total);
 		return total;
 	}
 
+	const toggleSoup = () => {
+		document.getElementById('soup').classList.toggle('disabled');
+	}
+
+	foodSoupEl.addEventListener('change', toggleSoup);
+
 	document.body.addEventListener('keyup', calculateTotal);
+	document.body.addEventListener('click', calculateTotal);
 	document.body.addEventListener('keypress', (e) => {
 	    if (isNaN(String.fromCharCode(e.which))) {
 	    	e.preventDefault();
