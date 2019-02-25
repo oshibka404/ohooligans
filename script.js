@@ -17,11 +17,10 @@
 
 	const totalEl = document.getElementById('total');
 
-	const calculateTips = () => {
+	const calculateTips = (moneyTotal) => {
 		const peopleTotal = _parseIntText(peopleTotalEl)
 		const tips = _parseIntText(tipsEl);
-		const foodAndDrinks = calculateDrink() + calculateFood();
-		const tipsTotal = (tips / peopleTotal) * foodAndDrinks;
+		const tipsTotal = (tips / peopleTotal) * moneyTotal;
 		tipsTotalEl.innerText = Math.ceil(tipsTotal);
 		return tipsTotal;
 	}
@@ -29,7 +28,7 @@
 	const calculateDrink = () => {
 		const drink = _parseIntText(drinkEl);
 		const drinkDiscount = _parseIntText(drinkDiscountEl);
-		drinkTotal = (drink * (1 - drinkDiscount / 100));
+		const drinkTotal = (drink * (1 - drinkDiscount / 100));
 		drinkTotalEl.innerText = Math.ceil(drinkTotal);
 		return drinkTotal;
 	}
@@ -37,12 +36,14 @@
 	const calculateFood = () => {
 		const food = _parseIntText(foodEl);
 		const foodDiscount = _parseIntText(foodDiscountEl);
-		foodTotal = (food * (1 - foodDiscount / 100));
+		const foodTotal = (food * (1 - foodDiscount / 100));
 		foodTotalEl.innerText = Math.ceil(foodTotal);
 		return foodTotal;
 	}
 
-	const calculateSoup = () => foodSoupEl.checked ? parseInt(foodSoupPriceEl.innerText || 0, 10) : 0;
+	const calculateSoup = () => {
+		return foodSoupEl.checked ? _parseIntText(foodSoupPriceEl) : 0;
+	}
 
 	const calculateFoodWithSoup = () => {
 		const total = calculateSoup() + calculateFood();
@@ -51,7 +52,8 @@
 	}
 
 	const calculateTotal = () => {
-		const total = calculateFoodWithSoup() + calculateDrink() + calculateTips();
+		const totalWithoutTips = calculateFoodWithSoup() + calculateDrink();
+		const total = totalWithoutTips + calculateTips(totalWithoutTips);
 		totalEl.innerText = isNaN(total) ? 'undefinedundefinedNaN[]{}' : Math.ceil(total);
 		return total;
 	}
