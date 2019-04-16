@@ -67,6 +67,7 @@
 	}
 
 	foodSoupEl.addEventListener('change', toggleSoup);
+	window.addEventListener('load', calculateTotal);
 	document.body.addEventListener('keyup', calculateTotal);
 	document.body.addEventListener('click', calculateTotal);
 	document.body.addEventListener('keypress', (e) => {
