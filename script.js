@@ -1,3 +1,20 @@
+var prmstr = window.location.search.substr(1);
+var params = {};
+var prmarr = prmstr.split("&");
+for ( var i = 0; i < prmarr.length; i++) {
+	var tmparr = prmarr[i].split("=");
+	if ( ! isNaN(tmparr[1]) ) {
+		params[tmparr[0]] = tmparr[1];
+	}
+}
+
+if ( params['total'] != null ) {
+	document.getElementById('people__total').innerText = params['total'];
+}
+if ( params['tips'] != null ) {
+	document.getElementById('tips').innerText = params['tips'];
+}
+
 (function() {
 	const foodEl = document.getElementById('food');
 	const foodDiscountEl = document.getElementById('food__discount');
