@@ -71,8 +71,10 @@
 	document.body.addEventListener('keyup', calculateTotal);
 	document.body.addEventListener('click', calculateTotal);
 	document.body.addEventListener('keypress', (e) => {
-	    if (isNaN(String.fromCharCode(e.which))) {
-	    	e.preventDefault();
-	    }
+		if (isNaN(String.fromCharCode(e.which))) {
+			e.preventDefault();
+		}
 	});
 })();
+
+// vim: set noexpandtab :
