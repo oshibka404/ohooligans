@@ -3,16 +3,16 @@
 	const params = {};
 	const prmarr = prmstr.split("&");
 	for (let i = 0; i < prmarr.length; i++) {
-		var tmparr = prmarr[i].split("=");
+		const [paramName, paramValue] = prmarr[i].split("=");
 		if (!isNaN(tmparr[1])) {
 			params[tmparr[0]] = tmparr[1];
 		}
 	}
 
-	if (params['total'] != undefined) {
+	if (typeof params.total !== 'undefined') {
 		document.getElementById('people__total').innerText = params['total'];
 	}
-	if (params['tips'] != undefined) {
+	if (typeof params.tips !== 'undefined') {
 		document.getElementById('tips').innerText = params['tips'];
 	}
 
