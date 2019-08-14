@@ -1,11 +1,11 @@
 (function() {
-	const prmstr = window.location.search.substr(1);
+	const paramString = window.location.search.substr(1);
 	const params = {};
-	const prmarr = prmstr.split("&");
-	for (let i = 0; i < prmarr.length; i++) {
-		const [paramName, paramValue] = prmarr[i].split("=");
-		if (!isNaN(tmparr[1])) {
-			params[tmparr[0]] = tmparr[1];
+	const paramArray = paramString.split("&");
+	for (let i = 0; i < paramArray.length; i++) {
+		const [paramName, paramValue] = paramArray[i].split("=");
+		if (!isNaN(paramValue)) {
+			params[paramName] = paramValue;
 		}
 	}
 
