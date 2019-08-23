@@ -10,10 +10,10 @@
 	}
 
 	if (typeof params.total !== 'undefined') {
-		document.getElementById('people__total').innerText = params['total'];
+		document.getElementById('people__total').innerText = params.total;
 	}
 	if (typeof params.tips !== 'undefined') {
-		document.getElementById('tips').innerText = params['tips'];
+		document.getElementById('tips').innerText = params.tips;
 	}
 
 	const foodEl = document.getElementById('food');
