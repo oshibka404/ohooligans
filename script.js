@@ -1,5 +1,5 @@
 (function() {
-	const paramString = window.location.search.substr(1);
+	const paramString = window.location.search.substr(1); // cut off `?` symbol
 	const params = {};
 	const paramArray = paramString.split("&");
 	for (let i = 0; i < paramArray.length; i++) {
