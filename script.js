@@ -1,4 +1,21 @@
 (function() {
+	const paramString = window.location.search.substr(1); // cut off `?` symbol
+	const params = {};
+	const paramArray = paramString.split('&');
+	for (let i = 0; i < paramArray.length; i++) {
+		const [paramName, paramValue] = paramArray[i].split('=');
+		if (!isNaN(paramValue)) {
+			params[paramName] = paramValue;
+		}
+	}
+
+	if (typeof params.total !== 'undefined') {
+		document.getElementById('people__total').innerText = params.total;
+	}
+	if (typeof params.tips !== 'undefined') {
+		document.getElementById('tips').innerText = params.tips;
+	}
+
 	const foodEl = document.getElementById('food');
 	const foodDiscountEl = document.getElementById('food__discount');
 	const foodTotalEl = document.getElementById('food__total');
