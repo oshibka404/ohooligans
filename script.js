@@ -3,7 +3,7 @@
 	const params = {};
 	const paramArray = paramString.split('&');
 	for (let i = 0; i < paramArray.length; i++) {
-		const [paramName, paramValue] = paramArray[i].split("=");
+		const [paramName, paramValue] = paramArray[i].split('=');
 		if (!isNaN(paramValue)) {
 			params[paramName] = paramValue;
 		}
